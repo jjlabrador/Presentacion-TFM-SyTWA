@@ -133,11 +133,11 @@ Director: Casiano Rodríguez León
 	   
 	   	\begin{columns}
         	% First column
-        	\begin{column}{4.5cm}
+        	\begin{column}{5cm}
         		\includegraphics[width=1.2\textwidth]{images/github-sdp.eps}
         	\end{column}
         	% Second column
-        	\begin{column}{3.5cm}
+        	\begin{column}{4cm}
           		\includegraphics[width=1.2\textwidth]{images/github-classroom.eps}
         	\end{column}
       	\end{columns}
@@ -153,7 +153,8 @@ Director: Casiano Rodríguez León
 	   \item Ausencia de herramientas externas para tal fin.
 	   \item Mejor aprovechamiento de las herramientas educativas.
 	   \item Simplificación del trabajo del docente.
-	   \item Ahorro considerable de tiempo en tareas repetitivas.
+	   \item Ahorro de tiempo en tareas repetitivas.
+	   \item Característica {\bfseries asíncrona} de Node.js
 	\end{itemize}
 	\framebreak
 	%-------------------------------------
@@ -162,7 +163,7 @@ Director: Casiano Rodríguez León
 	\bigskip
 	
 	\begin{itemize}
-       \item Asignatura cuatrimestral con 10 prácticas evaluables.
+       \item Asignatura de programación con 10 prácticas evaluables.
 	   \item Total de alumnos matriculados: 50.
 	   \item Total de prácticas por alumno: 10.
 	\end{itemize}
@@ -209,10 +210,11 @@ Director: Casiano Rodríguez León
     \begin{column}{9cm}
       \begin{itemize}
         \item Revisión biliográfica y consulta del estado del arte.
+        \newline
         \item Desarrollo de una herramienta de línea de comandos escrita en {\bfseries Node.js} que permita: 
         \begin{itemize}
           \item Autenticación de usuarios.
-          \item Listar organizaciones, asignaciones y repositorios del usuario.
+          \item Listar y acceder a organizaciones, asignaciones y repositorios del usuario.
           \item Automatizar la descarga de repositorios y la ejecución de scripts en los mismos:
           \begin{itemize}
              \item TDD.
@@ -242,29 +244,21 @@ Director: Casiano Rodríguez León
   \frametitle{Tecnología usada}
   
   \begin{center}
-  	\includegraphics[width=0.45\textwidth]{images/nodejs-logo.eps}
-  
-  
-  	%\begin{columns}
-        	% First column
-     %   	\begin{column}{4cm}
-        		\includegraphics[width=0.32\textwidth]{images/npm.eps}
-        		\hspace*{1cm}
-      %  	\end{column}
-        	% Second column
-       % 	\begin{column}{2cm}
-          		\includegraphics[width=0.17\textwidth]{images/github.eps}
-          		        		\hspace*{0.3cm}
-        %	\end{column}
-        %	\begin{column}{4cm}
-          		\includegraphics[width=0.45\textwidth]{images/travis-ci-logo.eps}
-        %	\end{column}
-      	%\end{columns} 
+  	\includegraphics[width=0.5\textwidth]{images/nodejs-logo.eps}
+  \end{center}
+  \vspace{-1cm}
+  \begin{center}
+  	\includegraphics[width=0.32\textwidth]{images/npm.eps}
+    \hspace*{1cm}
+    \includegraphics[width=0.17\textwidth]{images/github.eps}
+    \hspace*{0.3cm}
+    \includegraphics[width=0.45\textwidth]{images/travis-ci-logo.eps} 
   \end{center}
   
-	 
+  \begin{center}
+  	\includegraphics[width=0.45\textwidth]{images/gitbook.eps}
+  \end{center}
   
-
 \end{frame}
 
 %++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  
@@ -274,6 +268,8 @@ Director: Casiano Rodríguez León
   \frametitle{Metodología de desarrollo}
   
   Metodología {\bfseries ágil}:
+  \bigskip
+  
   \begin{itemize}
     \item Reuniones periódicas estableciendo iteraciones cortas.
     \item Desarrollo y presentación de resultados y prototipos tras cada iteración.
@@ -286,21 +282,32 @@ Director: Casiano Rodríguez León
     % First column
     \begin{column}{5cm}
     	{\bfseries GitHub}
+    	\bigskip
       \begin{itemize}
         \item Control de versiones usando \textit{branching}.
         \item Gestión de incidencias y mejoras usando \textit{issues}.
       \end{itemize}
-      \includegraphics[width=0.5\textwidth]{images/octocat.eps}
     \end{column}
     % Second column
     \begin{column}{5cm}
-    {\bfseries Travis-CI}
-    \begin{itemize}
-        \item Control de despliegues.
-      \end{itemize}
-
-        \includegraphics[width=0.7\textwidth]{images/travis-ci-logo.eps}
-
+    	\includegraphics[width=0.5\textwidth]{images/octocat.eps}
+    \end{column}
+  \end{columns}
+  \bigskip
+  \bigskip  
+  
+  \begin{columns}
+    % First column
+    \begin{column}{5cm}
+    	{\bfseries Travis-CI}
+   		\bigskip
+   		 \begin{itemize}
+        	\item Control de despliegues.
+      	\end{itemize}
+    \end{column}
+    % Second column
+    \begin{column}{5cm}
+        \includegraphics[width=0.9\textwidth]{images/travis-ci-logo.eps}
     \end{column}
   \end{columns}
   
@@ -318,19 +325,114 @@ Director: Casiano Rodríguez León
 \end{frame}
 
 \subsection{Funcionalidades requeridas}
-\begin{frame}
+\begin{frame}[allowframebreaks]
 \frametitle{Funcionalidades requeridas}
   \bigskip
+  
+  \underline{{\bfseries Autenticación con GitHub}}
   \bigskip
   
-  \begin{itemize}
-    \item Autenticación con GitHub
-    \item Listar organizaciones, asignaciones y repositorios de GitHub del usuario
-    \item Automatizar la descarga de repositorios
-    \item Automatizar la ejecución de scripts en los repositorios
-    \item Recopilar y presentar la información obtenida de la automatización de tareas
-  \end{itemize}
+  \begin{center}
+     \includegraphics[width=0.5\textwidth]{images/ghshell2-1.eps}
+  \end{center}
+  \framebreak
+  %-----------------------
+  \begin{center}
+  	\includegraphics[width=0.55\textwidth]{images/ghshell2-2.eps}
+  	\newline
+  	\newline
+  	\includegraphics[width=0.85\textwidth]{images/ghshell2-3.eps}
+  \end{center}
   
+  \framebreak
+  %-----------------------
+  
+  \underline{{\bfseries Listado y acceso a organizaciones y repositorios}}
+  \bigskip
+  
+  \begin{center}
+	  \includegraphics[width=0.9\textwidth]{images/ghshell3.eps}
+	  \newline
+	  \newline
+  	  \includegraphics[width=0.9\textwidth]{images/ghshell4.eps}
+  \end{center}
+  \framebreak
+  %-----------------------
+  
+  \underline{{\bfseries Automatizar la descarga de repositorios}} (asíncrono)
+  
+  \begin{center}
+  	\includegraphics[width=1\textwidth]{images/ghshell6-1.eps}
+  	\newline
+  	\newline
+  	\includegraphics[width=0.6\textwidth]{images/ghshell6-2e.eps}
+  \end{center}
+  
+  \framebreak
+  %-----------------------
+  
+  \underline{{\bfseries Automatizar la ejecución de scripts en repositorios}} (asíncrono/síncrono)
+  
+  \begin{center}
+  	\includegraphics[width=0.9\textwidth]{images/ghshell7-1.eps}
+  	\newline
+  	\newline
+  	\includegraphics[width=0.6\textwidth]{images/ghshell7-2e.eps}
+  \end{center}
+  \framebreak
+  %-----------------------
+  
+  \underline{{\bfseries Presentación de resultados de la automatización de tareas}} (asíncrono)
+  \bigskip
+  
+  \begin{center}
+  	\includegraphics[width=0.8\textwidth]{images/ghshell8-1.eps}
+  	\newline
+  	\newline
+  	
+  	\framebreak
+  	%-----------------------
+  	\includegraphics[width=0.7\textwidth]{images/ghshell8-2e.eps}
+  	
+  	\framebreak
+  	%-----------------------
+  \end{center}
+  
+  \underline{{\bfseries Formato PDF}}
+  	
+  \begin{center}
+  	\includegraphics[width=0.9\textwidth]{images/ghshell8-6b.eps}
+  	\framebreak
+  	%-----------------------
+ 	
+  	\includegraphics[width=0.7\textwidth]{images/ghshell8-7.eps}
+  	\framebreak
+  	%-----------------------
+
+  	\includegraphics[width=0.7\textwidth]{images/ghshell8-8.eps}
+  	\framebreak
+  	%-----------------------
+
+	\includegraphics[width=0.6\textwidth]{images/ghshell8-9.eps}
+  	\framebreak
+  	%-----------------------
+  	
+  	\includegraphics[width=0.5\textwidth]{images/ghshell8-4.eps}
+  	\framebreak
+  	%-----------------------
+
+  \end{center}
+  
+  \underline{{\bfseries Formato HTML (GitBook)}}
+  	
+  \begin{center}
+  	\includegraphics[width=0.9\textwidth]{images/ghshell8-5.eps}
+  	\framebreak
+  	%-----------------------
+  	
+  	\includegraphics[width=0.8\textwidth]{images/ghshell8-3.eps}
+
+  \end{center}
   
 \end{frame}
   %+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -339,19 +441,53 @@ Director: Casiano Rodríguez León
   
 \begin{frame}[allowframebreaks]
 \frametitle{Funcionalidades extra}
-  Funcionalidades que, a pesar de no ser requeridas, brindan al usuario de una mejor experiencia de uso del programa:
+  %Funcionalidades que, a pesar de no ser requeridas, brindan al usuario de una mejor experiencia de uso del programa:
+  %\bigskip
+  
+  \underline{{\bfseries Autocompletado de comandos}}
   \bigskip
   
-  \begin{itemize}
-    \item Autocompletado de los comandos.
-    Pull Request.
-    \item Opción de ayuda.
-    \item Opción de visualizar el directorio de trabajo actual
-    \item Opción para conocer el propietario de cada repositorio
-    \framebreak
-    %+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+  \begin{center}
+  	\includegraphics[width=0.8\textwidth]{images/tab1-1.eps}
+  \end{center}
+  \begin{center}
+  	\includegraphics[width=0.8\textwidth]{images/tab1-2.eps}
+  \end{center}
+  
+  \framebreak
+  %-----------------------
+  
+  \underline{{\bfseries Ayuda}}
+  \bigskip
+  
+  \begin{center}
+  	\includegraphics[width=1\textwidth]{images/help1-2.eps}
+  \end{center}
+  
+  \framebreak
+  %-----------------------
+  
+  \underline{{\bfseries Visualización del directorio de trabajo actual}}
+  \bigskip
+  \bigskip
     
-  \end{itemize}  
+  \begin{center}
+  	\includegraphics[width=0.9\textwidth]{images/pwd.eps}
+  \end{center}
+  
+  \framebreak
+  %-----------------------
+  
+  \underline{{\bfseries Propietario del repositorio}}
+  \bigskip
+      
+   \begin{center}
+  	\includegraphics[width=0.5\textwidth]{images/owner1-1.eps}
+   \end{center}
+   \begin{center}
+  	\includegraphics[width=1\textwidth]{images/owner1-2.eps}
+  \end{center}
+     
 \end{frame}
 
 %++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  
@@ -361,9 +497,9 @@ Director: Casiano Rodríguez León
   \frametitle{Conclusiones y Trabajos Futuros/Conclusions and Future Work}
   
   \begin{itemize}
-    \item Esta herramienta pretende ser un complemento para....
-    \item a
-    \item a
+    \item Complemento de ayuda a la corrección.
+    \item Ahorro considerable de carga de trabajo.
+    \item Aproximación a una evaluación objetiva del código.
   \end{itemize}
   \framebreak
   %+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -372,26 +508,26 @@ Director: Casiano Rodríguez León
   \begin{itemize}
     \item Generar scripts en Bash para evaluar aplicaciones (instalación de dependencias, comprobación de calidad de código y ejecución de tests) en varios lenguajes: Node.js, C++, Ruby, Python, etc.
     \item Dar soporte a la ejecución de scripts escritos en otros lenguajes: Ruby, Python...
-    \item Generar issues en cada repositorio con los resultados de los scripts que se ejecuten.
+    \item Generar issues en cada repositorio con los errores de los scripts que se ejecuten.
     \item Crear ramas en cada repositorio con los resultados de los scripts.
   \end{itemize}
   \framebreak
   %+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
   
   \begin{itemize}
-    \item This tool intends to ...
-    \item It uses ....
-    \item On the other hand...
+    \item This tool intends to be a complement for the correction of teacher's tasks.
+    \item It would save a huge amount of workload.
+    \item Approach to an objective code evaluation.
   \end{itemize}
   \framebreak
   %+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
   
   {\bf Future Work:}
   \begin{itemize}
-    \item a
-    \item a
-    \item a
-    \item a
+    \item Generate Bash scripts to evaluate applications (installation of dependencies, test code quality, check testing...) in several languages: Node.js, C++, Ruby, Python, etc.
+    \item Provide support to another programming language scripts.
+    \item Create {\it issues} in each repository with the scripts' errors. 
+    \item Create {\it branches} in each repository with the scripts' results.
   \end{itemize}
 \end{frame}
 

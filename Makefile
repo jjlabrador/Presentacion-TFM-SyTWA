@@ -6,6 +6,8 @@ all:
 	dvips -Ppdf -G0 -o presentacion_tfm.ps presentacion_tfm.dvi
 	ps2pdf -sPAPERSIZE=a4 -DMaxSubsetPct=100 -dCompatibilityLevel=1.2 -dSubsetFonts=true -dEmbedAllFonts=true presentacion_tfm.ps presentacion_tfm.pdf
 
+convert:
+	mogrify -format eps images/*.png
+
 clean:
 	rm -f *.log *.dvi *.aux *.blg *.ps *.nav *.out *.snm *.toc *.bbl
-
